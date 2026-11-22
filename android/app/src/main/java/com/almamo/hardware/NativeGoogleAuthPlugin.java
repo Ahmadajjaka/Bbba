@@ -99,7 +99,7 @@ public class NativeGoogleAuthPlugin extends Plugin {
                                 ret.put("provider", "google-native-credential-manager");
                                 activity.runOnUiThread(() -> call.resolve(ret));
                                 return;
-                            } catch (GoogleIdTokenParsingException parseErr) {
+                            } catch (Exception parseErr) {
                                 activity.runOnUiThread(() -> launchLegacyGoogleSignIn(activity, call, serverClientId));
                                 return;
                             }
